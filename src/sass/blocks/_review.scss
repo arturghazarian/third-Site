@@ -1,0 +1,26 @@
+.review {
+    padding-bottom: 50px;
+
+    &-wrapper {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 60px;
+
+        &__text {
+            margin-top: 10px;
+        }
+
+        &__img {
+            min-width: 170px;
+            min-height: 170px;
+        }
+
+        &__marathon {
+            color: rgb(100, 100, 100);
+            font-size: 14px;
+        }
+    }
+
+}
