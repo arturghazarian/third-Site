@@ -49,5 +49,38 @@ $(document).ready(function () {
             $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
             $('.overlay, #order').fadeIn('fast');
         })
+
     });
+
+    function validateForms(form) {
+        $(form).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "Խնդրում եմ լրացրեք ձեր անունը",
+                    minlength: jQuery.validator.format("Լրացրեք առնվազն {0} նիշ")
+                },
+                phone: "Խնդրում եմ լրացրեք ձեր հեռախոսահամարը",
+                email: {
+                    required: "Խնդրում եմ լրացրեք ձեր էլ․ հասցեն",
+                    email: "Սխալ էլ․ հասցե"
+                }
+            }
+        });
+    }
+    validateForms('#consultation-form')
+    validateForms('#order form')
+    validateForms('#consultation form')
+
+    $('input[name=phone]').mask('+374(99)(99-99-99)')
 });
